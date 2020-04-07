@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Gancho Ciclo de Vida VueJS</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+	<div id="vm">
+		<span>{{ mensaje }}</span><br>
+		<button type="button" v-on:click="mensaje = 'CHANGED TITLE'">Cambiar Mensaje</button><br>
+		<button type="button" v-on:click="destruir">Destruir Mensaje</button><br>
+	</div>
+	<script src="vue.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Computed properties</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+	<div id="vm">
+		<button type="button" v-on:click="primero++">Incrementar el primero</button><br>
+		<button type="button" v-on:click="segundo++">Incrementar el segundo</button><br>
+		<button type="button" v-on:click="tercero++">Incrementar el tercero</button><br>
+		<button type="button" v-on:click="cuarto++">Incrementar el cuarto</button><br>
+		<p>Primero: {{ primero }}</p>
+		<p>segundo: {{ segundo }}</p>
+		<p>tercero: {{ tercero }}</p>
+		<p>cuarto: {{ cuarto }}</p>
+		<p>Suma:: {{ total }}</p>
+	</div>
+	<script src="vue.js"></script>
+</body>
+</html>

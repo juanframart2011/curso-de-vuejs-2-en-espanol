@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Eventos</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+	<div id="eventos">
+		<button v-on:click="sumarUno">Sumar Uno</button><br>
+		<button v-on:click="restarUno">Sumar Dos</button>
+		<hr>
+		{{ contador }}
+		<hr>
+		<h2>Parametros</h2>
+		<button v-on:click="alerta('Esta es una alerta')">Mostrar Alerta</button><br>
+		<hr>
+		<h2>MouseEnter</h2>
+		<div
+		v-on:mousemove="mostraUbicacion"
+		v-on:click="sumarUno"
+		v-on:click.once="help" style="height:300px;background: red;"></div><br>
+		x: {{ x }}, y: {{ y }}
+		<hr>
+		<h2>Teclado</h2>
+		<input type="text" v-on:keyup="sumar(1)">
+	</div>
+	<script>
+		
+		var app = new Vue({
+
+			el: '#eventos',
+			data: {
+				contador: 0,
+				x: 0,
+				y: 0
+			},
+			methods:{
+				alerta: function( message ){
+
+					alert( message );
+				},
+				help: function(){
+
+					alert( "¡Help Me!" );
+				},
+				mostraUbicacion: function( event ){
+
+					this.x = event.clientX;
+					this.y = event.clientY;
+				},
+				sumarUno: function(){
+
+					this.contador +=1;
+				},
+				restarUno: function(){
+
+					this.contador -=1;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

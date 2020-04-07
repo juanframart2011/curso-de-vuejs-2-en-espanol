@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Directivas</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+	<div id="vm">
+		<img :src="imagen" />
+		
+		<div v-text="texto"></div><br>
+		<div v-html="textHtml"></div>
+		
+		<br>
+		<div v-if="mostrar">Div #1</div>
+		<div v-else>Div #2</div>
+		
+		<br>
+		<template v-if="mostrar">Template #1</template>
+		
+		<br>
+		<div v-if="parrafo == 1">parrafo #1</div>
+		<div v-else-if="parrafo == 2">parrafo #2</div>
+		<div v-else>parrafo #2</div>
+
+		<br>
+		<div v-show="mostrar">Div Show #1</div>
+
+		<br>
+		<ul>
+		    <li v-for="pais in paises">{{ pais }}</li>
+		</ul>
+
+		<br>
+		<ul>
+		    <li v-for="( pais, indice ) in paises">{{ indice + ' - ' + pais }}</li>
+		</ul>
+
+		<br>
+		<ul>
+		    <template v-for="( pais, indice ) in paises">
+		    	<li>{{ pais }}</li>
+		    	<hr>
+		   	</template>
+		</ul>
+	</div>
+	<script src="vue.js"></script>
+</body>
+</html>
