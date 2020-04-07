@@ -19,26 +19,11 @@
 				
 				<div class="jumbotron">
 					
-					<h1>{{ titulo }}</h1>
+					<titulo></titulo>
 
-					<div class="input-group">
-						<input type="text" v-model="nuevaTarea" class="form-control" @keyup.enter="addTarea()">
-						<span class="input-group-btn">
-							<button @click="addTarea()" class="btn btn-primary mb-2">Agregar</button>
-						</span>
-					</div>
+					<nueva-tarea></nueva-tarea>
 
-					<ul class="list-group">
-					    <li class="list-group-item" v-for="( tarea, i ) in tareas" :class="{ terminada: tarea.terminada }">
-					    	{{ tarea.texto }}
-					    	<span class="pull-right">
-
-					    		<button @click="tarea.terminada = !tarea.terminada" class="btn btn-success btn-xs glyphicon glyphicon-ok"></button>
-
-					    		<button @click="deleteTarea( i )" class="btn btn-danger btn-xs glyphicon glyphicon-ok"></button>
-					    	</span>
-					    </li>
-					</ul>
+					<lista-de-tareas></lista-de-tareas>
 				</div>
 			</div>
 		</div>
