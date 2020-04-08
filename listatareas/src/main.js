@@ -1,8 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-Vue.config.productionTip = false
+export var bus = new Vue({
+
+  methods:{
+    actualizarContador(numTareas){
+      this.$emit('actualizarContador', numTareas);
+    }
+  }
+});
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  render: h => h(App)
+})

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+	import { bus } from './main.js'
 	export default {
         
         data(){
@@ -16,7 +17,7 @@
         		nuevaTarea: ''
         	}
         },
-        props:['tareas'],
+        props:['tareas','actualizarContador'],
         methods:{
         	
         	addTarea: function(){
@@ -30,11 +31,16 @@
 						terminada : false
 					});
 
-					this.$emit( 'incrementarContador', 1 );
+					//this.actualizarContador();
+					bus.actualizarContador( this.tareas.length );
 				}
 
 				this.nuevaTarea = '';
 			}
+        },
+        created(){
+
+        	bus.actualizarContador( this.tareas.length );
         }
     }
 </script>
