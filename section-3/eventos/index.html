@@ -10,8 +10,8 @@
 <body>
 
 	<div id="eventos">
-		<button v-on:click="sumarUno">Sumar Uno</button><br>
-		<button v-on:click="restarUno">Sumar Dos</button>
+		<button @click="sumarUno">Sumar Uno</button><br>
+		<button @click="restarUno">Sumar Dos</button>
 		<hr>
 		{{ contador }}
 		<hr>
@@ -21,8 +21,12 @@
 		<h2>MouseEnter</h2>
 		<div
 		v-on:mousemove="mostraUbicacion"
-		v-on:click="sumarUno"
-		v-on:click.once="help" style="height:300px;background: red;"></div><br>
+		v-on:click="sumarUno">
+			<div
+			v-on:mousemove.stop
+			v-on:click.once="help" style="height:300px;background: red;"></div>
+		</div>
+		<br>
 		x: {{ x }}, y: {{ y }}
 		<hr>
 		<h2>Teclado</h2>
